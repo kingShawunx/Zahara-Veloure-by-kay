@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zahara Veloure by Kay — Luxury Fragrance &amp; Fashion</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="site-header">
+
+    <div class="logo">
+        <img src="Remah Logo.jpeg" alt="Zahara Veloure logo">
+        <h1>Zahara Veloure</h1>
+    </div>
+
+    <nav id="nav-menu" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <button type="button" class="account-trigger" id="account-trigger">Sign In</button>
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+    >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+</header>
+
+
+<main id="main">
+
+    <!-- HOME -->
+    <section id="home" class="hero scallop-bottom scallop-to-alt">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">Zahara Veloure by Kay</p>
+
+            <h2>The Scent of Soft Luxury</h2>
+
+            <p class="hero-copy">
+                A luxury fashion and abaya house for those who move through the world with elegance and confidence. Carefully selected perfumes and stylish pieces, chosen to help you look good, feel confident, and leave a lasting impression.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#services" class="btn btn-primary">Explore Our Services</a>
+                <a href="#about" class="btn btn-ghost">About the Brand</a>
+            </div>
+
+        </div>
+
+
+        <div class="hero-slideshow" aria-roledescription="carousel" aria-label="Zahara Veloure showcase">
+
+            <ul class="hero-slides">
+                <li class="hero-slide is-active">
+                    <img src="Remah2 Work.jpeg" alt="Burgundy embroidered abaya with beaded floral cuffs" loading="eager">
+                </li>
+                <li class="hero-slide">
+                    <img src="Remah3 Work.jpeg" alt="Al Marji eau de parfum by Canberra" loading="lazy">
+                </li>
+                <li class="hero-slide">
+                    <img src="Remah14 Work.jpeg" alt="Sky blue abaya with silver embroidery" loading="lazy">
+                </li>
+                <li class="hero-slide">
+                    <img src="Remah5 Work.jpeg" alt="Ibda Al Oud gold eau de parfum" loading="lazy">
+                </li>
+                <li class="hero-slide">
+                    <img src="Remah6 Work.jpeg" alt="Beige and burnt-orange embroidered kaftans" loading="lazy">
+                </li>
+                <li class="hero-slide">
+                    <img src="Remah17 Work.jpeg" alt="Blue and pink sequinned floral kaftans" loading="lazy">
+                </li>
+            </ul>
+
+            <div class="hero-slideshow-controls">
+                <button type="button" class="slide-nav slide-prev" aria-label="Previous slide">&#10094;</button>
+                <div class="slide-dots" role="tablist" aria-label="Choose slide"></div>
+                <button type="button" class="slide-nav slide-next" aria-label="Next slide">&#10095;</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="flourish" aria-hidden="true"></div>
+        <p class="eyebrow eyebrow-light">Our Story</p>
+        <h2>About Us</h2>
+
+        <p>
+            Zahara Veloure by Kay is a luxury fashion and fragrance brand dedicated to bringing elegance, confidence, and soft luxury into everyday life. We offer a beautiful selection of premium perfumes and stylish clothing, carefully chosen for those who appreciate quality, sophistication, and timeless style.
+        </p>
+
+        <p>
+            Our goal is simple: to help every customer look good, smell amazing, and feel confident. Whether you're searching for your signature scent or the perfect outfit, Zahara Veloure is here to make every moment feel special.
+        </p>
+
+        <p><strong>Our Vision</strong> — To become a trusted luxury brand known for quality, elegance, and exceptional customer experience.</p>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+        <p class="eyebrow eyebrow-light">What We Offer</p>
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+            <div class="card">
+                <h3>🌸 Luxury Fragrances</h3>
+                <p>Discover captivating perfumes with elegant and long-lasting scents designed to complement your personality and leave a memorable impression.</p>
+            </div>
+            <div class="card">
+                <h3>👗 Fashion &amp; Clothing</h3>
+                <p>Explore stylish and carefully selected clothing pieces that combine elegance, comfort, and modern fashion for every occasion.</p>
+            </div>
+            <div class="card">
+                <h3>🛍️ Personal Shopping</h3>
+                <p>Get assistance choosing the perfect perfume or outfit based on your style, occasion, and preferences.</p>
+            </div>
+            <div class="card">
+                <h3>🎁 Gift Selection</h3>
+                <p>Find beautiful fragrance and fashion options perfect for birthdays, anniversaries, celebrations, and special moments.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <p class="eyebrow eyebrow-light">Client Stories</p>
+        <h2>Our Portfolio</h2>
+
+        <div class="portfolio-container">
+            <blockquote class="project">
+                <p>Abaya Collection — Elegant and sophisticated abayas designed for women who appreciate modesty, confidence, and timeless fashion.</p>
+                <footer>&mdash; Elegance in every layer.International Market Vendor</footer>
+            </blockquote>
+
+            <blockquote class="project">
+                <p>Perfume Collection — Carefully selected fragrances with captivating scents designed to leave a lasting impression.</p>
+                <footer>&mdash; Crafted to make every moment unforgettable.Salaried Professional</footer>
+            </blockquote>
+
+            <blockquote class="project">
+                <p>Fashion &amp; Luxury Collection — A curated selection of stylish fashion pieces that blend elegance, beauty, and modern luxury.</p>
+                <footer>&mdash; Elena S.SME Business Owner</footer>
+            </blockquote>
+        </div>
+    </section>
+
+
+    <!-- GALLERY -->
+    <section id="images">
+        <p class="eyebrow eyebrow-light">Our Work</p>
+        <h2>Gallery</h2>
+
+        <div class="gallery-grid">
+            <img src="Remah6 Work.jpeg" alt="Burgundy embroidered abaya, front view" loading="lazy">
+            <img src="Remah7 Work.jpeg" alt="Burgundy embroidered abaya, detail view" loading="lazy">
+            <img src="Remah8 Work.jpeg" alt="Beige and burnt-orange embroidered kaftans" loading="lazy">
+            <img src="Remah9 Work.jpeg" alt="Blue and pink sequinned floral kaftans" loading="lazy">
+            <img src="Remah10 Work.jpeg" alt="Orange, purple and pink sequinned abayas" loading="lazy">
+            <img src="Remah11 Work.jpeg" alt="Sky blue abaya with silver embroidery" loading="lazy">
+            <img src="Remah12 Work.jpeg" alt="Al Marji eau de parfum by Canberra" loading="lazy">
+            <img src="Remah13 Work.jpeg" alt="Choco Musk eau de parfum by Al-Rehab" loading="lazy">
+            <img src="Remah14 Work.jpeg" alt="Kyle Marshmallow eau de parfum by Ayelet" loading="lazy">
+            <img src="Remah15 Work.jpeg" alt="Oud Modern eau de parfum" loading="lazy">
+            <img src="Remah16 Work.jpeg" alt="Ibda Al Oud gold eau de parfum" loading="lazy">
+            <img src="Remah17 Work.jpeg" alt="Savage, King Lion and Qissat Hub eau de parfum" loading="lazy">
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <p class="eyebrow eyebrow-light">Client Feedback</p>
+        <h2>What Our Clients Say</h2>
+
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>&ldquo;Absolutely beautiful! The abaya I purchased was elegant, comfortable, and exactly what I wanted.&rdquo;</p>
+                <h4>&mdash; Mr. Animashawun Ridwan</h4>
+            </div>
+            <div class="testimonial">
+                <p>&ldquo;The perfume smells amazing and lasts so long. Zahara Veloure has definitely become one of my favorite brands.&rdquo;</p>
+                <h4>&mdash; Mrs. Obidare Adebayo Oluwakemi</h4>
+            </div>
+            <div class="testimonial">
+                <p>&ldquo;I love the quality and attention to detail. Everything feels luxurious and well presented.&rdquo;</p>
+                <h4>&mdash; Mr. Adebayo Olawale</h4>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <p class="eyebrow eyebrow-light">Get In Touch</p>
+        <h2>Contact Us</h2>
+
+        <div class="contact-container">
+            <div class="contact-image">
+                <img src="Remah7 Work.jpeg" alt="Zahara Veloure abaya styling">
+                <img src="Remah10 Work.jpeg" alt="Zahara Veloure sequinned abayas">
+                <img src="Remah13 Work.jpeg" alt="Zahara Veloure fragrance collection">
+                <img src="Remah14 Work.jpeg" alt="Zahara Veloure fragrance collection">
+                <img src="Remah15 Work.jpeg" alt="Zahara Veloure fragrance collection">
+                <img src="Remah17 Work.jpeg" alt="Zahara Veloure fragrance collection">
+            </div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <h3>Zahara Veloure by Kay</h3>
+
+        <p>✨ Luxury Fragrances &amp; Fashion — Abayas, Perfumes, and Styling for the modern, elegant woman.</p>
+
+        <p>Email: <a href="mailto:karimahomo@gmail.com" class="btn">Contact Us</a></p>
+
+        <div class="footer-links">
+            <a href="https://www.tiktok.com/@zaharavelourebykay?_r=1&_t=ZS-98uJoDPdKKe" target="_blank" rel="noopener">Follow us on TikTok</a>
+            <a href="https://wa.me/+2348071852423" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+        </div>
+
+        <p class="footer-copy">&copy; 2026 Zahara Veloure by Kay. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<!-- ============================================
+     ACCOUNT MODAL — Sign In / Create Account
+     DEMO ONLY. See script.js for details.
+     ============================================ -->
+<div class="modal-overlay" id="account-overlay">
+    <div class="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-modal-title">
+        <button type="button" class="modal-close" id="account-close" aria-label="Close">&times;</button>
+
+        <div id="account-logged-out">
+            <div class="account-tabs">
+                <button type="button" class="account-tab is-active" data-tab="signin">Sign In</button>
+                <button type="button" class="account-tab" data-tab="signup">Create Account</button>
+            </div>
+
+            <form class="account-form is-active" id="signin-form" data-form="signin">
+                <h3 id="account-modal-title">Welcome Back</h3>
+                <label class="visually-hidden" for="signin-email">Email</label>
+                <input id="signin-email" type="email" placeholder="Email address" required>
+                <label class="visually-hidden" for="signin-password">Password</label>
+                <input id="signin-password" type="password" placeholder="Password" required>
+                <p class="form-msg" id="signin-msg"></p>
+                <button type="submit">Sign In</button>
+            </form>
+
+            <form class="account-form" id="signup-form" data-form="signup">
+                <h3>Create Your Account</h3>
+                <label class="visually-hidden" for="signup-name">Full name</label>
+                <input id="signup-name" type="text" placeholder="Full Name" required>
+                <label class="visually-hidden" for="signup-email">Email</label>
+                <input id="signup-email" type="email" placeholder="Email address" required>
+                <label class="visually-hidden" for="signup-password">Password</label>
+                <input id="signup-password" type="password" placeholder="Password (min. 6 characters)" minlength="6" required>
+                <p class="form-msg" id="signup-msg"></p>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+
+        <div class="account-signed-in" id="account-signed-in">
+            <h3>Welcome, <span id="account-name-display">Guest</span></h3>
+            <p>You're signed in to Zahara Veloure. Your orders and wishlist will appear here once connected to our shop.</p>
+            <button type="button" id="account-signout">Sign Out</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
