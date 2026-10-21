@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="Discover curated fashion, fragrances, and thoughtful finds at Zahara Veloure by Kay.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zahara Veloure by Kay — The scent of soft luxury">
+  <meta property="og:description" content="Discover perfumes, abayas, and fashion at Zahara Veloure by Kay.">
+  <meta property="og:image" content="icons/brand-logo.jpeg">
+  <meta property="og:site_name" content="Zahara Veloure by Kay">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zahara Veloure by Kay — The scent of soft luxury">
+  <meta name="twitter:description" content="Discover perfumes, abayas, and fashion at Zahara Veloure by Kay.">
+  <meta name="twitter:image" content="icons/brand-logo.jpeg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Zahara Veloure">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icons/app-icon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <title>Zahara Veloure by Kay — The scent of soft luxury</title>
+  <link rel="stylesheet" href="store.css">
+</head>
+<body>
+  <div class="preview-bar"><span class="preview-dot" aria-hidden="true"></span><span id="store-status">Connecting to the live catalogâ€¦</span></div>
+  <header class="store-header">
+    <a class="brand" href="index.html" aria-label="Zahara Market home"><img src="icons/brand-logo.jpeg" alt=""><span data-brand>Zahara Market</span></a>
+    <form class="search" id="search-form" role="search">
+      <label class="sr-only" for="search-input">Search products</label>
+      <input id="search-input" type="search" placeholder="Search products, styles and scents" autocomplete="off">
+      <button type="submit" aria-label="Search">âŒ•</button>
+    </form>
+    <nav class="header-actions" aria-label="Shopping links">
+      <a href="?view=account" class="header-link"><span class="nav-icon" aria-hidden="true">â™™</span><span class="action-label" id="account-label">Sign in</span></a><a href="?view=signup" class="header-link create-account-link"><span class="nav-icon" aria-hidden="true">+</span><span class="action-label">Create account</span></a>
+      <a href="?view=wishlist" class="header-link"><span class="nav-icon" aria-hidden="true">â™¡</span><span class="action-label">Wishlist</span><span class="count-badge" id="wishlist-count">0</span></a>
+      <a href="?view=cart" class="header-link"><span class="nav-icon" aria-hidden="true">â–±</span><span class="action-label">Cart</span><span class="count-badge" id="cart-count">0</span></a>
+    </nav>
+  </header>
+  <nav class="category-nav" aria-label="Product categories">
+    <a href="?view=home" data-nav="home">For you</a>
+    <a href="?view=shop" data-nav="shop">All products</a>
+    <span id="dynamic-category-links" style="display:contents"></span>
+    <a href="?view=deals" data-nav="deals">Deals</a>
+  </nav>
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+  <footer class="store-footer">
+    <div class="footer-brand"><a class="brand" href="index.html"><img src="icons/brand-logo.jpeg" alt=""><span data-brand>Zahara Market</span></a><p>Beautiful fashion and fragrances, thoughtfully chosen.</p></div>
+    <div><h2>Shop</h2><a href="?view=shop">All products</a><a href="?view=deals">Deals</a><a href="?view=wishlist">Wishlist</a></div>
+    <div><h2>Support</h2><a href="../contact.html">Contact us</a><a href="?view=help">Help &amp; FAQs</a><a href="?view=shipping">Shipping &amp; returns</a><a href="?view=track">Order tracking</a></div>
+    <div class="footer-policies"><h2>Store information</h2><a href="?view=privacy">Privacy</a><a href="?view=terms">Terms</a><a href="admin/login/">Store administrator sign in</a></div>
+    <div class="footer-note">Products, prices and stock come from the live catalog. Shopping and checkout are unavailable when the catalog cannot be reached.</div>
+    <p class="copyright">Â© <span id="year"></span> <span data-brand>Zahara Market</span></p>
+    <button type="button" class="install-app-button" id="install-app" hidden>Add to your phone</button>
+  </footer>
+  <nav class="mobile-nav" aria-label="Mobile shopping navigation">
+    <a href="?view=home" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg>Home</a>
+    <a href="?view=shop" data-nav="shop"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>Categories</a>
+    <a href="?view=shop&amp;focus=search" data-nav="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16.2 16.2 5 5"/></svg>Search</a>
+    <a href="?view=wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.2-8.8 11-8.8 11s-8.8-5.8-8.8-11a4.8 4.8 0 0 1 8.8-2.6 4.8 4.8 0 0 1 8.8 2.6Z"/></svg>Wishlist</a>
+    <a href="?view=account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Account</a>
+  </nav>
+  <dialog id="ios-install-help" class="install-help" aria-labelledby="install-help-title"><form method="dialog"><button class="install-help-close" aria-label="Close">&times;</button></form><p class="eyebrow">SHOP ON THE GO</p><h2 id="install-help-title">Add Zahara Veloure to your Home Screen</h2><ol><li>Open this page in <strong>Safari</strong>.</li><li>Tap the <strong>Share</strong> button at the bottom of the screen.</li><li>Choose <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.</li></ol><p>Your app opens from its own icon and uses the same store account.</p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const clean = (value) => String(value ?? "Unknown error")
+        .replace(/\b(?:sb_publishable|sb_secret)_[A-Za-z0-9_-]+/gi, "[redacted]")
+        .replace(/\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b/g, "[redacted]")
+        .replace(/Bearer\s+[^\s,;]+/gi, "Bearer [redacted]")
+        .replace(/((?:apikey|access_token|refresh_token)=)[^&\s]+/gi, "$1[redacted]");
+      const showStartupFailure = () => {
+        const status = document.getElementById("store-status");
+        if (status) status.textContent = "Catalog unavailable";
+        const app = document.getElementById("app");
+        if (!app) return;
+        app.replaceChildren();
+        const section = document.createElement("section");
+        section.className = "listing-page";
+        section.innerHTML = '<header class="section-heading"><p class="eyebrow">LIVE STORE CATALOG</p><h1>Products are temporarily unavailable</h1><p>The storefront could not start. Reload the page or inspect the browser Console.</p></header>';
+        app.append(section);
+      };
+      window.addEventListener("error", (event) => {
+        if (event.target && event.target !== window) {
+          const url = event.target.src || event.target.href || "";
+          const resource = url ? new URL(url, location.href).pathname : event.target.tagName;
+          console.error("[store startup] Resource failed to load", { resource });
+          if (/\/store\.js$|\/config\.js$|supabase-js/i.test(resource)) showStartupFailure();
+          return;
+        }
+        const source = event.filename ? new URL(event.filename).pathname : "inline script";
+        console.error("[store startup] Uncaught JavaScript error", { message: clean(event.message), source, line: event.lineno || null });
+        if (source.endsWith("/store.js") || source.endsWith("/config.js") || source === "inline script") showStartupFailure();
+      }, true);
+      window.addEventListener("unhandledrejection", (event) => {
+        console.error("[store startup] Unhandled promise rejection", { message: clean(event.reason?.message ?? event.reason) });
+      });
+      console.info("[store startup] Early error diagnostics installed");
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js?v=20261021-1"></script>
+  <script src="catalog.js"></script>
+  <script src="store.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>

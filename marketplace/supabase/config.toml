@@ -1,0 +1,17 @@
+[functions.create-order]
+verify_jwt = true
+
+[functions.initialize-paystack]
+verify_jwt = true
+
+[functions.verify-paystack]
+verify_jwt = true
+
+[functions.paystack-webhook]
+verify_jwt = false
+
+[functions.submit-payment-proof]
+verify_jwt = true
+
+[functions.review-manual-payment]
+verify_jwt = true
