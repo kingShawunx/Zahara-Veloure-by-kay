@@ -103,6 +103,8 @@ document.querySelectorAll('#nav-menu a').forEach(function (link) {
         touchStartX = null;
     }, { passive: true });
 
+    
+
     render();
     play();
 })();

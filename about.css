@@ -1,0 +1,1299 @@
+/* =========================================================
+   ZAHARA VELOURE BY KAY
+   YOU PAGE
+========================================================= */
+
+:root {
+    --cream: #faf7f2;
+    --cream-2: #f2ebe3;
+    --white: #ffffff;
+    --black: #161311;
+    --soft-black: #25201d;
+    --brown: #6f5c4e;
+    --gold: #b99458;
+    --gold-light: #d9c29b;
+    --line: #e6ddd4;
+    --muted: #81766e;
+    --danger: #9d4e4e;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    transition: background .35s ease, color .35s ease;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.account-header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background: rgba(250, 247, 242, .92);
+    border-bottom: 1px solid rgba(230, 221, 212, .8);
+    backdrop-filter: blur(18px);
+}
+
+.account-header-inner {
+    width: min(1400px, 92%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-logo {
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.account-logo span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.account-logo small {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.account-nav {
+    display: flex;
+    gap: 38px;
+}
+
+.account-nav a {
+    position: relative;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.account-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width .25s ease;
+}
+
+.account-nav a:hover::after,
+.account-nav a.active::after {
+    width: 100%;
+}
+
+.account-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn,
+.menu-btn {
+    width: 39px;
+    height: 39px;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.icon-btn:hover,
+.menu-btn:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+}
+
+.mobile-account-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(20, 16, 14, .86);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-close {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    border: 0;
+    background: none;
+    color: white;
+    font-size: 38px;
+}
+
+.search-box {
+    width: min(800px, 90%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    padding: 15px 0;
+}
+
+.search-box span {
+    color: var(--gold-light);
+    font-size: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255,255,255,.55);
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: white;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.you-page {
+    width: min(1400px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.you-hero {
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background:
+        linear-gradient(
+            110deg,
+            #eee2d8 0%,
+            #f7f0e9 52%,
+            #e7d9cd 100%
+        );
+}
+
+.you-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.small-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.you-hero h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 8vw, 105px);
+    font-weight: 500;
+    line-height: .82;
+    letter-spacing: -3px;
+}
+
+.you-hero h1 em {
+    color: var(--brown);
+    font-weight: 400;
+}
+
+.you-hero p {
+    max-width: 470px;
+    margin-top: 30px;
+    color: var(--brown);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 7%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(185,148,88,.4);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.hero-decoration::before,
+.hero-decoration::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(185,148,88,.25);
+    border-radius: 50%;
+}
+
+.hero-decoration::before {
+    inset: 30px;
+}
+
+.hero-decoration::after {
+    inset: 65px;
+}
+
+.hero-decoration span {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 130px;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+.account-auth {
+    padding: 100px 0;
+}
+
+.auth-intro {
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.auth-intro h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: .95;
+    font-weight: 500;
+}
+
+.auth-intro h2 em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.auth-intro p {
+    max-width: 550px;
+    margin-top: 20px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.auth-card {
+    padding: 45px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    min-height: 560px;
+    position: relative;
+}
+
+.auth-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    color: var(--gold);
+}
+
+.auth-mini {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.auth-card h3,
+.forgot-card h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.auth-description {
+    max-width: 430px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-wrap {
+    margin-bottom: 20px;
+}
+
+.input-wrap label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.input-wrap input,
+.input-wrap textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: #fcfaf8;
+    color: var(--black);
+    padding: 15px;
+    outline: none;
+    border-radius: 0;
+    transition: .25s ease;
+}
+
+.input-wrap input {
+    height: 52px;
+}
+
+.input-wrap textarea {
+    resize: vertical;
+}
+
+.input-wrap input:focus,
+.input-wrap textarea:focus {
+    border-color: var(--gold);
+    background: white;
+}
+
+.input-wrap input::placeholder,
+.input-wrap textarea::placeholder {
+    color: #aaa19a;
+}
+
+.two-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   LOGIN OPTIONS
+========================================================= */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 25px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.login-options button {
+    border: 0;
+    background: none;
+    color: var(--gold);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   LUXURY BUTTON
+========================================================= */
+
+.luxury-btn {
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: white;
+    transition: .3s ease;
+}
+
+.luxury-btn span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.luxury-btn b {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.luxury-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.small-btn {
+    width: auto;
+    min-width: 190px;
+}
+
+
+/* =========================================================
+   AUTH SWITCH
+========================================================= */
+
+.auth-switch {
+    position: absolute;
+    left: 45px;
+    right: 45px;
+    bottom: 35px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.auth-switch button {
+    border: 0;
+    background: none;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0 25px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.terms-row button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FORGOT
+========================================================= */
+
+.forgot-card {
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 45px;
+    background: var(--white);
+    border: 1px solid var(--line);
+}
+
+.back-btn {
+    border: 0;
+    background: none;
+    color: var(--gold);
+    margin-bottom: 35px;
+}
+
+.forgot-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.logged-dashboard {
+    padding: 80px 0 120px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background: var(--black);
+    color: white;
+    margin-bottom: 25px;
+}
+
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.profile-avatar {
+    width: 75px;
+    height: 75px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+    color: var(--gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+}
+
+.profile-header .small-label {
+    margin-bottom: 5px;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.profile-header p {
+    margin: 5px 0 0;
+    color: #b9b0a9;
+    font-size: 11px;
+}
+
+.logout-btn {
+    border: 1px solid rgba(255,255,255,.3);
+    background: transparent;
+    color: white;
+    padding: 11px 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.logout-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   MENU CARDS
+========================================================= */
+
+.account-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.menu-card {
+    position: relative;
+    min-height: 190px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--black);
+    transition: .3s ease;
+}
+
+.menu-card:hover,
+.menu-card.selected {
+    background: var(--cream-2);
+    border-color: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.menu-number {
+    display: block;
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+}
+
+.menu-icon {
+    display: block;
+    margin: 25px 0 12px;
+    font-size: 23px;
+    color: var(--gold);
+}
+
+.menu-card strong {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.menu-card small {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.menu-card > b {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   DASHBOARD PANEL
+========================================================= */
+
+.dashboard-panel {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 40px;
+    min-height: 400px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--line);
+}
+
+.panel-heading h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.panel-count {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.empty-symbol {
+    color: var(--gold);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.empty-state h4 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.outline-luxury-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 20px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.outline-luxury-btn:hover {
+    background: var(--black);
+    color: white;
+}
+
+
+/* =========================================================
+   DELIVERY
+========================================================= */
+
+.delivery-form {
+    max-width: 700px;
+    padding-top: 30px;
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.setting-row strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+}
+
+.setting-row p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.toggle {
+    position: relative;
+    width: 48px;
+    height: 27px;
+    flex-shrink: 0;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle span {
+    position: absolute;
+    inset: 0;
+    background: #d7d0c9;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.toggle span::before {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.toggle input:checked + span {
+    background: var(--gold);
+}
+
+.toggle input:checked + span::before {
+    transform: translateX(21px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15,12,10,.75);
+    backdrop-filter: blur(8px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+    width: min(560px, 100%);
+    padding: 45px;
+    background: var(--white);
+}
+
+.modal-box h3 {
+    margin: 0 0 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.modal-box p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: 0;
+    background: none;
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 5000;
+    padding: 15px 20px;
+    background: var(--black);
+    color: white;
+    font-size: 11px;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.account-footer {
+    padding: 60px 6% 25px;
+    background: var(--black);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.account-footer p {
+    color: #958d87;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #d0c8c1;
+    text-decoration: none;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    padding-top: 25px;
+    border-top: 1px solid #39332f;
+    color: #716b66;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    --cream: #12100f;
+    --cream-2: #1c1816;
+    --white: #1a1715;
+    --black: #f4eee7;
+    --soft-black: #eee7df;
+    --brown: #c4b5a7;
+    --line: #342e29;
+    --muted: #9d938b;
+}
+
+body.dark-mode .account-header {
+    background: rgba(18,16,15,.94);
+}
+
+body.dark-mode .account-logo,
+body.dark-mode .account-nav a,
+body.dark-mode .icon-btn,
+body.dark-mode .menu-btn {
+    color: #f4eee7;
+}
+
+body.dark-mode .you-hero {
+    background: linear-gradient(
+        110deg,
+        #211c19,
+        #171412
+    );
+}
+
+body.dark-mode .you-hero p {
+    color: #aaa098;
+}
+
+body.dark-mode .input-wrap input,
+body.dark-mode .input-wrap textarea {
+    background: #151311;
+    color: #f4eee7;
+    border-color: #38312c;
+}
+
+body.dark-mode .auth-card,
+body.dark-mode .dashboard-panel,
+body.dark-mode .menu-card,
+body.dark-mode .forgot-card {
+    background: #1a1715;
+}
+
+body.dark-mode .menu-card:hover,
+body.dark-mode .menu-card.selected {
+    background: #231e1b;
+}
+
+body.dark-mode .outline-luxury-btn {
+    color: #f4eee7;
+    border-color: #f4eee7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .account-nav {
+        gap: 20px;
+    }
+
+    .account-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-decoration {
+        right: 2%;
+        opacity: .5;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .account-header-inner {
+        min-height: 68px;
+    }
+
+    .account-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: grid;
+    }
+
+    .mobile-account-nav {
+        display: none;
+        flex-direction: column;
+        padding: 10px 5%;
+        border-top: 1px solid var(--line);
+    }
+
+    .mobile-account-nav.active {
+        display: flex;
+    }
+
+    .mobile-account-nav a {
+        padding: 15px 0;
+        color: var(--black);
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .you-hero {
+        min-height: 430px;
+        padding: 60px 8%;
+    }
+
+    .hero-decoration {
+        width: 220px;
+        height: 220px;
+        right: -60px;
+        bottom: -30px;
+    }
+
+    .hero-decoration span {
+        font-size: 90px;
+    }
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        min-height: auto;
+        padding: 32px 25px 105px;
+    }
+
+    .auth-switch {
+        left: 25px;
+        right: 25px;
+    }
+
+    .account-menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .account-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        grid-column: 1;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .you-page {
+        width: 94%;
+    }
+
+    .you-hero {
+        min-height: 390px;
+        padding: 50px 7%;
+    }
+
+    .you-hero h1 {
+        font-size: 60px;
+        letter-spacing: -2px;
+    }
+
+    .hero-decoration {
+        width: 170px;
+        height: 170px;
+        right: -65px;
+    }
+
+    .hero-decoration span {
+        font-size: 65px;
+    }
+
+    .account-auth {
+        padding: 65px 0;
+    }
+
+    .auth-intro h2 {
+        font-size: 43px;
+    }
+
+    .two-inputs {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .login-options {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .account-menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 25px 20px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .panel-heading h3 {
+        font-size: 32px;
+    }
+
+    .profile-header {
+        padding: 25px;
+    }
+
+    .profile-main {
+        align-items: flex-start;
+    }
+
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-header h2 {
+        font-size: 28px;
+    }
+
+    .modal-box {
+        padding: 35px 25px;
+    }
+
+    .toast {
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+    }
+}
