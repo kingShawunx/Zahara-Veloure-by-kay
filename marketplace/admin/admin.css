@@ -5,3 +5,53 @@
 th,td{font-size:12px}.panel-kicker,.sidebar-label,.topbar-caption,.live-tag,.pill{font-size:10px}.admin-form label,.inline-form label,.table-tools input,.table-tools select,.order-status-select,.tracking-input{font-size:12px}.text-button,.table-actions button,.danger-button{font-size:11px}.nav-item span{font-size:13px}.metric-card span{font-size:12px}.metric-card small{font-size:11px}.topbar h1{font-size:29px}@media(max-width:620px){.nav-item span{font-size:10px}.panel-kicker,.live-tag,.pill{font-size:9px}th,td{font-size:11px}}
 .admin-password{display:flex;align-items:stretch;gap:6px}.admin-password input{flex:1;min-width:0}.admin-password button{margin-top:6px;padding:0 10px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--orange-dark);font-size:10px;font-weight:700;cursor:pointer}.admin-forgot{display:inline-block;margin-top:10px;color:var(--orange-dark);font-size:11px}.admin-forgot[aria-disabled=true]{opacity:.6;pointer-events:none}
 .admin-brand img{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;object-fit:cover}
+
+/* Zahara Veloure administration: refined black, ivory, and gold system */
+:root{--orange:#b89a5e;--orange-dark:#80683a;--ink:#1e1c19;--muted:#746e64;--line:#e8e2d6;--wash:#f7f5f0;--green:#28674b;background:var(--wash);color:var(--ink)}
+body{background:var(--wash);color:var(--ink)}
+.admin-shell{grid-template-columns:248px minmax(0,1fr);background:#f7f5f0}
+.sidebar{z-index:6;padding:25px 15px;background:#171715;color:#f8f6f0;border-right:1px solid #302d26}
+.sidebar .admin-brand{color:#fff;margin-left:8px;letter-spacing:.1em}
+.sidebar .admin-brand span{color:#d6bd83}
+.sidebar .admin-brand img{border-color:#b89a5e}
+.sidebar-label{color:#b8a77f;letter-spacing:.18em}
+.nav-item{color:#d5d1c8;border-radius:6px;gap:10px;font-size:13px}
+.nav-item span:last-child{font-size:12px;font-weight:600}
+.nav-mark{width:25px;height:25px;display:grid;place-items:center;flex:0 0 25px;border:1px solid #4e483a;border-radius:50%;color:#d2b774;font-size:10px!important;font-weight:700!important}
+.nav-item:hover,.nav-item.is-active{background:#302c22;color:#fff}
+.nav-item.is-active .nav-mark{border-color:#b89a5e;background:#b89a5e;color:#171715}
+.back-store{color:#c9c2b2}
+.topbar{min-height:88px;background:#fff;border-bottom-color:var(--line);box-shadow:0 4px 18px #201b1208}
+.topbar-caption{color:#8d7440;letter-spacing:.17em}
+.topbar h1,.login-card h1,.panel h2,.section-actions h2,.editor-panel h3{font-family:Georgia,'Times New Roman',serif;color:#201e1b}
+.topbar h1{font-size:30px}
+.button{min-height:41px;border-radius:5px;transition:background .15s ease,border-color .15s ease,transform .15s ease}
+.button:hover{transform:translateY(-1px)}
+.button-primary{background:#1b1a17;color:#ead8a7;border-color:#1b1a17}
+.button-primary:hover{background:#80683a;border-color:#80683a}
+.button-light{background:#fff;border-color:#d8cfbd;color:#40392e}
+.button-light:hover{background:#f5f0e5;border-color:#b89a5e}
+.metric-card,.panel{border-color:#e6dfd1;border-radius:9px;box-shadow:0 5px 18px #201b1207}
+.metric-card{padding:19px;border-top:2px solid #b89a5e}
+.metric-card strong{color:#201e1b;font-variant-numeric:tabular-nums}
+.metric-card span{color:#6f685d}
+.live-tag{background:#f2eddf;color:#80683a}
+.sales-chart .chart-day i{background:linear-gradient(180deg,#d2bc84,#80683a)}
+.table-panel{border-radius:9px}
+th,td{padding:13px 14px}
+th{background:#f7f5f0;color:#776d5b}
+.table-tools input:focus,.table-tools select:focus,.admin-form input:focus,.admin-form select:focus,.admin-form textarea:focus,.inline-form input:focus,.inline-form select:focus{outline:2px solid #b89a5e55;border-color:#b89a5e}
+.text-button{color:#80683a}
+.pill{text-transform:capitalize}
+.table-actions button,.danger-button{min-height:30px;padding:5px 9px}
+.danger-button:hover{background:#fbefed;border-color:#d6a19b}
+.payment-reason{display:block;min-width:140px;margin-bottom:7px;color:#655d50;font-size:11px}
+.payment-reason input{display:block;width:100%;min-height:31px;margin-top:4px;padding:5px 7px;border:1px solid var(--line);border-radius:4px;font:inherit}
+.login-screen{background:radial-gradient(circle at 78% 18%,#e8deca 0,transparent 34%),linear-gradient(145deg,#f7f5f0,#eee8dc)}
+.login-card{border-color:#e5dcc9;border-radius:14px;box-shadow:0 24px 70px #201b1215}
+.login-card h1{font-size:37px}
+.admin-forgot{color:#80683a}
+@media(max-width:950px){.admin-shell{grid-template-columns:74px minmax(0,1fr)}.sidebar{padding-right:8px;padding-left:8px}.nav-item{gap:0}.nav-mark{width:27px;height:27px;flex-basis:27px}.sidebar nav{gap:5px}}
+@media(max-width:620px){.admin-shell{padding-bottom:115px}.sidebar{height:108px;padding:3px 5px max(3px,env(safe-area-inset-bottom));background:#171715;border-top:1px solid #4b4435}.sidebar nav{height:100%;display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,minmax(0,1fr));grid-auto-columns:minmax(62px,1fr);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}.nav-item{min-height:0;flex-direction:column;justify-content:center;gap:2px;padding:3px}.nav-item .nav-mark{width:20px;height:20px;flex-basis:20px;font-size:9px!important}.nav-item span:last-child{max-width:none;display:block;font-size:9px!important;line-height:1.1;white-space:nowrap}.topbar{min-height:74px}.topbar h1{font-size:25px}.admin-section{padding-top:14px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-actions{align-items:center}.table-scroll{overscroll-behavior-x:contain}.global-message{z-index:9}}
+@media(max-width:380px){.metric-card{padding:10px}.metric-card strong{font-size:18px}.topbar-right .button{padding:0 9px;font-size:10px}}
+@media(min-width:621px) and (max-width:950px){.sidebar .nav-item span:last-child{max-width:0;overflow:hidden;font-size:0!important}}
