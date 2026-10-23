@@ -131,7 +131,7 @@
     if (db && params.get("view") !== "checkout") db.auth.getUser().then(({ data }) => { const label = document.getElementById("account-label"); if (label) label.textContent = data.user && !data.user.is_anonymous ? "My Account" : "Sign in"; }).catch(() => { const label = document.getElementById("account-label"); if (label) label.textContent = "Sign in"; });
     document.querySelectorAll("[data-brand]").forEach((el) => el.textContent = config.brandName);
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("store-status").textContent = catalogState === "ready" ? "Live catalog Â· customer accounts enabled" : catalogState === "loading" ? "Connecting to the store catalogâ€¦" : "Catalog unavailable";
+    document.getElementById("store-status").textContent = catalogState === "ready" ? "Live catalog · customer accounts enabled" : catalogState === "loading" ? "Connecting to the store catalog…" : "Catalog unavailable";
     const categoryLinks = document.getElementById("dynamic-category-links");
     const visibleCategories = categoryRows.filter((category) => !category.parent_id && category.nav_visible);
     const navCategories = visibleCategories.length ? visibleCategories.map((category) => category.name) : [...new Set(products.map((p) => p.category).filter(Boolean))].sort();
