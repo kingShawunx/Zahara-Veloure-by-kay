@@ -275,14 +275,14 @@
       if(action==="toggle-banner"){const current=bannerRows.find((row)=>row.id===id);const active=!current.active;const {error}=await db.from("homepage_banners").update({active}).eq("id",id);if(error)throw error;await audit("banner.toggle","homepage_banner",id,{active});notify(`Banner ${active?"published":"unpublished"}.`);await loadContent();}
       if(action==="delete-banner"){if(!confirm("Delete this homepage banner?"))return;const {error}=await db.from("homepage_banners").delete().eq("id",id);if(error)throw error;await audit("banner.delete","homepage_banner",id);notify("Banner deleted.");await loadContent();}
 if(action==="delete-product"){const p=productRows.find((x)=>x.id===id);if(!p)return;
-        const {data:depData}=await db.from("order_items").select("id",{count:"exact",head:true}).eq("product_id",id);
-        const inOrders=(depData?.length||0)>0;
-        const {data:invData}=await db.from("inventory_movements").select("id",{count:"exact",head:true}).eq("product_id",id);
-        const inInventory=(invData?.length||0)>0;
-        const {data:revData}=await db.from("reviews").select("id",{count:"exact",head:true}).eq("product_id",id);
-        const inReviews=(revData?.length||0)>0;
-        const hasDependents=inOrders||inInventory||inReviews;
-        if(hasDependents){if(!confirm(`Archive "${p.name}"? This product has existing order, inventory or review records. It will be hidden from the store but kept in your reports and history.`))return;const {error:archiveError}=await db.rpc("archive_product",{p_product_id:id});if(archiveError)throw archiveError;notify(`Product archived: ${p.name}.`);}else{if(!confirm(`Delete "${p.name}"? This cannot be undone.`))return;const {error}=await db.from("products").delete().eq("id",id);if(error)throw error;await audit("product.delete","product",id,{name:p.name});notify("Product deleted.");}
+        const {count:orderCount,error:orderErr}=await db.from("order_items").select("id",{count:"exact",head:true}).eq("product_id",id);
+        const {count:invCount,error:invErr}=await db.from("inventory_movements").select("id",{count:"exact",head:true}).eq("product_id",id);
+        const {count:revCount,error:revErr}=await db.from("reviews").select("id",{count:"exact",head:true}).eq("product_id",id);
+        const {count:cartCount,error:cartErr}=await db.from("cart_items").select("id",{count:"exact",head:true}).eq("product_id",id);
+        const {count:wishCount,error:wishErr}=await db.from("wishlists").select("id",{count:"exact",head:true}).eq("product_id",id);
+        const hasDependents=(orderCount||0)>0||(invCount||0)>0||(revCount||0)>0||(cartCount||0)>0||(wishCount||0)>0;
+        if(hasDependents){if(!confirm(`Archive "${p.name}"? This product has existing order, inventory, review, cart, or wishlist records. It will be hidden from the store but kept in your reports and history.`))return;const {error:archiveError}=await db.rpc("archive_product",{p_product_id:id});if(archiveError)throw archiveError;notify(`Product archived: ${p.name}.`);}else{if(!confirm(`Delete "${p.name}"? This cannot be undone.`))return;const images=(p.product_images||[]);if(images.length){const {error:storageError}=await db.storage.from("product-images").remove(images.map((x)=>x.storage_path));if(storageError)console.warn("Product image cleanup failed",storageError);}
+        const {error}=await db.from("products").delete().eq("id",id);if(error)throw error;await audit("product.delete","product",id,{name:p.name});notify("Product deleted.");}
         await loadProducts();await loadOverview();}
       if(action==="delete-category"){if(Number(button.dataset.children)>0){notify("Move or remove nested categories first.",true);return;}if(Number(button.dataset.count)>0){notify("This category still has products. Reassign them before deleting the category.",true);return;}if(!confirm("Delete this empty category?"))return;const {error}=await db.from("categories").delete().eq("id",id);if(error)throw error;await audit("category.delete","category",id);notify("Category deleted.");loadCategories();}
       if(action==="save-order"){

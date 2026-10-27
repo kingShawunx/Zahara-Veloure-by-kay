@@ -15,11 +15,12 @@ end;
 $$;
 
 -- 1. Detach the inventory history from the product row so deletion no longer fails.
+--    Drop NOT NULL so the FK can SET NULL when a product is removed.
 alter table public.inventory_movements
-  drop constraint if exists inventory_movements_product_id_fkey;
+  alter column product_id drop not null;
 
 alter table public.inventory_movements
-  alter column product_id type uuid using product_id;
+  drop constraint if exists inventory_movements_product_id_fkey;
 
 -- Re-create the FK with SET NULL so old stock adjustments remain as historical records.
 alter table public.inventory_movements
@@ -42,8 +43,9 @@ begin
   select name into v_name from public.products where id = p_product_id;
   if not found then raise exception 'Product not found'; end if;
 
-  -- A product that still appears in active carts, wishlists, open orders or
-  -- reviews should be archived, not hard-deleted, so customer data stays intact.
+  -- A product that still appears in active carts, wishlists, open orders,
+  -- reviews, or inventory history should be archived, not hard-deleted,
+  -- so customer data stays intact.
   select exists(
     select 1 from public.cart_items ci join public.carts c on c.id = ci.cart_id
     where ci.product_id = p_product_id
@@ -53,6 +55,8 @@ begin
     select 1 from public.order_items oi where oi.product_id = p_product_id
   ) or exists(
     select 1 from public.reviews r where r.product_id = p_product_id
+  ) or exists(
+    select 1 from public.inventory_movements im where im.product_id = p_product_id
   ) into v_has_dependents;
 
   update public.products
@@ -72,3 +76,6 @@ $$;
 
 revoke all on function public.archive_product(uuid) from public, anon, authenticated;
 grant execute on function public.archive_product(uuid) to authenticated;
+
+-- Force PostgREST to reload its schema cache so the new function is visible.
+notify pgrst, 'reload schema';
